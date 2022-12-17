@@ -2,9 +2,9 @@
 """
 Created on Sat Dec 17 13:38:14 2022
 
-@author: tafe2
+@author: Cameron Hill
 """
-from datetime import datetime,date
+from datetime import date
 
 class HouseInfo():
     def __init__(self,data) -> None:
@@ -15,9 +15,9 @@ class HouseInfo():
 
         for record in self.data:
             if rec_area == 0:
-                field_data.append(record['id'])
+                field_data.append(record[field])
             elif rec_area  == int(record['area']):
-                field_data.append(record['id'])
+                field_data.append(record[field])
 
 
         return field_data        
