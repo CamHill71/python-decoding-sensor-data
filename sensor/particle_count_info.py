@@ -16,7 +16,7 @@ class ParticleData(HouseInfo):
         recs = []
 
         for rec in data:
-            recs(float(rec))
+            recs.append(float(rec))
 
         return recs
 
@@ -27,3 +27,20 @@ class ParticleData(HouseInfo):
     def get_data_by_date(self, rec_date=date.today()):
         recs = super().get_data_by_date("particulate", rec_date)
         return self._convert_data(recs)
+
+    def get_data_concentrations(self,data):
+        particulate ={"good":0,"moderate":0,"bad":0}
+
+        for rec in data:
+            if rec <= 50:
+                particulate["good"] = particulate["good"] + 1
+            elif rec > 50 and rec <= 100:
+                particulate["moderate"] = particulate["moderate"] + 1
+            else:
+                particulate["bad"] = particulate["bad"] + 1
+
+
+
+        return particulate
+
+
