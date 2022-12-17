@@ -23,7 +23,7 @@ class HouseInfo():
         return field_data        
 
 
-    def get_data_by_date(self,field,rec_date=datetime.now().date()):
+    def get_data_by_date(self,field,rec_date=date.today()):
         field_data = []
 
         for record in self.data:
