@@ -6,7 +6,7 @@ Created on Sat Dec 17 13:38:14 2022
 """
 
 from house_info import HouseInfo
-from datetime import datetime, date
+from datetime import date
 
 
 class HumidityData(HouseInfo):
