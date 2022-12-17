@@ -27,7 +27,7 @@ class HouseInfo():
         field_data = []
 
         for record in self.data:
-            if date.strftime(rec_date,'%m/%d/%y') == record['date']:
+            if rec_date.strftime('%m/%d/%y') == record['date']:
                 field_data.append(record['id'])
 
         return field_data
